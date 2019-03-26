@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Axios from "axios"
+import axios from "axios"
 import MovieInfo from "../components/MovieInfo"
 
 class MovieDataPage extends React.Component {
@@ -12,7 +12,8 @@ class MovieDataPage extends React.Component {
   }
 
   search = () => {
-    Axios.get(`http://www.omdbapi.com/?t=${this.state.inputBox}&apikey=fd82d3db`)
+    axios
+      .get(`http://www.omdbapi.com/?t=${this.state.inputBox}&apikey=fd82d3db`)
       .then((response) => {
         console.log(response)
         this.setState({ movieData: response.data })
